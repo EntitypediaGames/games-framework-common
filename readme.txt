@@ -1,0 +1,1 @@
+This folder contains Entitypedia Games Framework common classes.
