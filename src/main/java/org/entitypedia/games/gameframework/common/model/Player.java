@@ -16,7 +16,7 @@ public class Player {
 
     private Long id;
 
-    private Date creationTime = new Date();
+    private Date creationTime;
 
     private String uid;
 

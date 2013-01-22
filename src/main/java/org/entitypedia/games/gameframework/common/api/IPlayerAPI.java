@@ -10,11 +10,11 @@ import org.entitypedia.games.gameframework.common.model.Player;
  */
 public interface IPlayerAPI {
 
-    final String LOGIN_PLAYER = "player/login";
-    final String CREATE_PLAYER = "player/create";
+    final String LOGIN_PLAYER = "players/login";
+    final String CREATE_PLAYER = "players/create";
     final String READ_PLAYER = "player/{playerID}";
-    final String DELETE_PLAYER = "player/delete";
-    final String UPDATE_PLAYER = "player/update";
+    final String DELETE_PLAYER = "players/delete";
+    final String UPDATE_PLAYER = "players/update";
     final String UPDATE_PLAYER_PASSWORD = "players/updatePassword";
     final String UPDATE_PLAYER_EMAIL = "players/updateEmail";
     final String UPDATE_PLAYER_FIRST_NAME = "players/updateFirstName";
