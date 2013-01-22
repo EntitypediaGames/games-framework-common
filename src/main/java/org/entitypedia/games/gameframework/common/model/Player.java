@@ -1,5 +1,6 @@
 package org.entitypedia.games.gameframework.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.entitypedia.games.common.model.WordGameUser;
 
 import java.util.Date;
@@ -9,15 +10,55 @@ import java.util.Date;
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
-public class Player extends WordGameUser {
+public class Player {
 
     private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    private Date creationTime = new Date();
+
+    private String uid;
+
+    private String password;
 
     private String email;
 
     private String firstName;
 
     private String lastName;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public String getEmail() {
         return email;
@@ -41,20 +82,5 @@ public class Player extends WordGameUser {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    @Override
-    public void setId(Long id) {
-        super.setId(id);
-    }
-
-    @Override
-    public void setCreationTime(Date creationTime) {
-        super.setCreationTime(creationTime);
-    }
-
-    @Override
-    public void setUid(String uid) {
-        super.setUid(uid);
     }
 }
