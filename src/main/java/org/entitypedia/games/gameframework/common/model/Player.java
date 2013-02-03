@@ -1,7 +1,6 @@
 package org.entitypedia.games.gameframework.common.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.entitypedia.games.common.model.WordGameUser;
 
 import java.util.Date;
 
@@ -27,6 +26,13 @@ public class Player {
     private String firstName;
 
     private String lastName;
+
+    private String facebookId;
+
+    @JsonIgnore
+    private String facebookToken;
+
+    private Date facebookTokenExpiry;
 
     public Long getId() {
         return id;
@@ -82,5 +88,29 @@ public class Player {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFacebookId() {
+        return facebookId;
+    }
+
+    public void setFacebookId(String facebookId) {
+        this.facebookId = facebookId;
+    }
+
+    public String getFacebookToken() {
+        return facebookToken;
+    }
+
+    public void setFacebookToken(String facebookToken) {
+        this.facebookToken = facebookToken;
+    }
+
+    public Date getFacebookTokenExpiry() {
+        return facebookTokenExpiry;
+    }
+
+    public void setFacebookTokenExpiry(Date facebookTokenExpiry) {
+        this.facebookTokenExpiry = facebookTokenExpiry;
     }
 }

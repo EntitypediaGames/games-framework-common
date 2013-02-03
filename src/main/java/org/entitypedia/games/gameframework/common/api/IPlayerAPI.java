@@ -11,6 +11,7 @@ import org.entitypedia.games.gameframework.common.model.Player;
 public interface IPlayerAPI {
 
     final String LOGIN_PLAYER = "players/login";
+    final String LOGIN_FACEBOOK_PLAYER = "players/loginFacebook";
     final String CREATE_PLAYER = "players/create";
     final String READ_PLAYER = "player/{playerID}";
     final String DELETE_PLAYER = "players/delete";
@@ -25,6 +26,11 @@ public interface IPlayerAPI {
      * Login (just to check credentials).
      */
     void login();
+
+    /**
+     * Logs in Facebook account.
+     */
+    Player loginFacebook(String token);
 
     /**
      * Creates a player.
