@@ -20,6 +20,7 @@ public interface IPlayerAPI {
     final String UPDATE_PLAYER_EMAIL = "players/updateEmail";
     final String UPDATE_PLAYER_FIRST_NAME = "players/updateFirstName";
     final String UPDATE_PLAYER_LAST_NAME = "players/updateLastName";
+    final String UPDATE_PLAYER_FACEBOOK = "players/updateFacebook";
     final String LIST_PLAYERS = "players";
 
     /**
@@ -100,6 +101,14 @@ public interface IPlayerAPI {
      * @param lastName new last name
      */
     void updatePlayerLastName(long playerID, String lastName);
+
+    /**
+     * Updates player Facebook connection data.
+     *
+     * @param playerID id of the player
+     * @param token Facebook access token. Empty string removes the connection with Facebook.
+     */
+    void updatePlayerFacebook(long playerID, String token);
 
     /**
      * Lists players.
