@@ -28,6 +28,8 @@ public class Game implements Serializable {
 
     private String logoURL;
 
+    private String sliderURL;
+
     private String OAuthCallbackURL;
 
     private String OAuthSecret;
@@ -70,6 +72,14 @@ public class Game implements Serializable {
 
     public void setLogoURL(String logoURL) {
         this.logoURL = logoURL;
+    }
+
+    public String getSliderURL() {
+        return sliderURL;
+    }
+
+    public void setSliderURL(String sliderURL) {
+        this.sliderURL = sliderURL;
     }
 
     public Developer getDeveloper() {
