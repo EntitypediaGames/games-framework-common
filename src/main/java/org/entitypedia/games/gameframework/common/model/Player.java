@@ -2,6 +2,7 @@ package org.entitypedia.games.gameframework.common.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
-public class Player {
+public class Player implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
