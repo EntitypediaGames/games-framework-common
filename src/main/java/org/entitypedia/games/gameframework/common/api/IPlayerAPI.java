@@ -13,6 +13,8 @@ public interface IPlayerAPI {
     final String LOGIN_PLAYER = "players/login";
     final String ACTIVATE_PLAYER_EMAIL = "players/activateEmail";
     final String SEND_EMAIL_ACTIVATION_CODE = "players/sendEmailActivationCode";
+    final String RESET_PLAYER_PASSWORD = "players/resetPassword";
+    final String REQUEST_PLAYER_PASSWORD_RESET = "players/requestPasswordReset";
     final String LOGIN_FACEBOOK_PLAYER = "players/loginFacebook";
     final String CREATE_PLAYER = "players/create";
     final String READ_PLAYER = "player/{playerID}";
@@ -46,6 +48,21 @@ public interface IPlayerAPI {
      * Sends an activation code to the player's email to confirm ownership.
      */
     void sendEmailActivationCode();
+
+    /**
+     * Resets the password of the account to the new one.
+     *
+     * @param code     password reset authorization code
+     * @param password new password
+     */
+    void resetPassword(String code, String password);
+
+    /**
+     * Sends password reset code to player's email.
+     *
+     * @param email player's email
+     */
+    void requestPasswordReset(String email);
 
     /**
      * Creates a player.
