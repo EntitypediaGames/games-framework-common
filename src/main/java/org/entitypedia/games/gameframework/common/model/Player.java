@@ -24,6 +24,8 @@ public class Player implements Serializable {
 
     private String email;
 
+    private Boolean emailActive;
+
     private String firstName;
 
     private String lastName;
@@ -76,6 +78,14 @@ public class Player implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getEmailActive() {
+        return emailActive;
+    }
+
+    public void setEmailActive(Boolean emailActive) {
+        this.emailActive = emailActive;
     }
 
     public String getFirstName() {

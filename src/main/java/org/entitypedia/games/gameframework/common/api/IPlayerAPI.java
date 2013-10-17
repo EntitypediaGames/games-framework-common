@@ -11,6 +11,8 @@ import org.entitypedia.games.gameframework.common.model.Player;
 public interface IPlayerAPI {
 
     final String LOGIN_PLAYER = "players/login";
+    final String ACTIVATE_PLAYER_EMAIL = "players/activateEmail";
+    final String SEND_EMAIL_ACTIVATION_CODE = "players/sendEmailActivationCode";
     final String LOGIN_FACEBOOK_PLAYER = "players/loginFacebook";
     final String CREATE_PLAYER = "players/create";
     final String READ_PLAYER = "player/{playerID}";
@@ -34,6 +36,18 @@ public interface IPlayerAPI {
     Player loginFacebook(String token);
 
     /**
+     * Marks player email as really owned by the player.
+     *
+     * @param code activation code from the activation message
+     */
+    void activateEmail(String code);
+
+    /**
+     * Sends an activation code to the player's email to confirm ownership.
+     */
+    void sendEmailActivationCode();
+
+    /**
      * Creates a player.
      *
      * @param player player structure in JSON format
@@ -51,6 +65,7 @@ public interface IPlayerAPI {
 
     /**
      * Retrieves a particular player by id.
+     *
      * @param playerID player id
      * @return player structure in JSON format
      */
@@ -82,14 +97,14 @@ public interface IPlayerAPI {
      * Updates player email.
      *
      * @param playerID id of the player
-     * @param email new email
+     * @param email    new email
      */
     void updatePlayerEmail(long playerID, String email);
 
     /**
      * Updates player first name.
      *
-     * @param playerID id of the player
+     * @param playerID  id of the player
      * @param firstName new first name
      */
     void updatePlayerFirstName(long playerID, String firstName);
@@ -106,7 +121,7 @@ public interface IPlayerAPI {
      * Updates player Facebook connection data.
      *
      * @param playerID id of the player
-     * @param token Facebook access token. Empty string removes the connection with Facebook.
+     * @param token    Facebook access token. Empty string removes the connection with Facebook.
      */
     void updatePlayerFacebook(long playerID, String token);
 
