@@ -35,7 +35,19 @@ public class Player implements Serializable {
     @JsonIgnore
     private String facebookToken;
 
+    @JsonIgnore
     private Date facebookTokenExpiry;
+
+    private String gplusId;
+
+    @JsonIgnore
+    private String gplusAToken;
+
+    @JsonIgnore
+    private Date gplusATokenExpiry;
+
+    @JsonIgnore
+    private String gplusRToken;
 
     @JsonIgnore
     private String openId;
@@ -134,5 +146,37 @@ public class Player implements Serializable {
 
     public void setOpenId(String openId) {
         this.openId = openId;
+    }
+
+    public String getGplusId() {
+        return gplusId;
+    }
+
+    public void setGplusId(String gplusId) {
+        this.gplusId = gplusId;
+    }
+
+    public String getGplusAToken() {
+        return gplusAToken;
+    }
+
+    public void setGplusAToken(String gplusAToken) {
+        this.gplusAToken = gplusAToken;
+    }
+
+    public String getGplusRToken() {
+        return gplusRToken;
+    }
+
+    public void setGplusRToken(String gplusRToken) {
+        this.gplusRToken = gplusRToken;
+    }
+
+    public Date getGplusATokenExpiry() {
+        return gplusATokenExpiry;
+    }
+
+    public void setGplusATokenExpiry(Date gplusATokenExpiry) {
+        this.gplusATokenExpiry = gplusATokenExpiry;
     }
 }
