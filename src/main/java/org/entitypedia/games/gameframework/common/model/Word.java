@@ -3,7 +3,7 @@ package org.entitypedia.games.gameframework.common.model;
 import java.io.Serializable;
 
 /**
- * Word information.
+ * Word as used in word games. For example, "apple".
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
@@ -13,10 +13,19 @@ public class Word implements Serializable {
 
     private Long id;
 
+    /**
+     * The word itself
+     */
     private String word;
 
+    /**
+     * ISO language code
+     */
     private String languageCode;
 
+    /**
+     * Word frequency in some text collection, now sourced from Google NGram
+     */
     private Long frequency;
 
     public Long getId() {

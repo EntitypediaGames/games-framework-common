@@ -7,6 +7,7 @@ import org.entitypedia.games.gameframework.common.model.Player;
  * API for managing players.
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @spring-mvc-doclet.path players
  */
 public interface IPlayerAPI {
 
@@ -30,7 +31,7 @@ public interface IPlayerAPI {
     final String LIST_PLAYERS = "players";
 
     /**
-     * Login (just to check credentials).
+     * Login (just checks credentials).
      */
     void login();
 
@@ -65,7 +66,7 @@ public interface IPlayerAPI {
     void resetPassword(String code, String password);
 
     /**
-     * Sends password reset code to player's email.
+     * Sends password reset code to the player's email.
      *
      * @param email player's email
      */
@@ -74,16 +75,18 @@ public interface IPlayerAPI {
     /**
      * Creates a player.
      *
-     * @param player player structure in JSON format
-     * @return player structure in JSON format
+     * @param player player structure
+     * @return player structure
      */
     Player createPlayer(Player player);
 
     /**
      * Retrieves a particular player by id or uid. IDs are numerical, while UIDs start with "p".
+     * Reserved "current" value of playerID returns currently authenticated player
+     * (useful for games which might need to retrieve game framework account id).
      *
-     * @param playerID is the id of the player we want to retrieve
-     * @return player structure in JSON format
+     * @param playerID id of the player to retrieve.
+     * @return player structure
      */
     Player readPlayer(String playerID);
 
@@ -91,7 +94,7 @@ public interface IPlayerAPI {
      * Retrieves a particular player by id.
      *
      * @param playerID player id
-     * @return player structure in JSON format
+     * @return player structure
      */
     public Player readPlayer(long playerID);
 
@@ -160,7 +163,7 @@ public interface IPlayerAPI {
     /**
      * Lists players.
      *
-     * @param pageSize pageSize
+     * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number
      */
     ResultsPage<Player> listPlayers(Integer pageSize, Integer pageNo);

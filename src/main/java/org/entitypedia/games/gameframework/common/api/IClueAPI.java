@@ -7,6 +7,7 @@ import org.entitypedia.games.gameframework.common.model.Clue;
  * API for working with clues.
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @spring-mvc-doclet.path clues
  */
 public interface IClueAPI {
 
@@ -16,7 +17,7 @@ public interface IClueAPI {
     /**
      * Retrieves a particular clue by id.
      *
-     * @param clueID is the id of the clue we want to retrieve
+     * @param clueID id of the clue to retrieve
      * @return clue structure
      */
     Clue readClue(long clueID);
@@ -24,10 +25,10 @@ public interface IClueAPI {
     /**
      * Lists clues.
      *
-     * @param pageSize pageSize
+     * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number
-     * @param filter   filter expression
-     * @param order    order expression: dash separated list of field names prefixed with D or A for descending or ascending respectively
+     * @param filter   filter expression. example: creator.id eq 1 or published eq true or creationTime ge '20130101'
+     * @param order    order expression. example: Alayout.rowCount-Dlayout.columnCount
      */
     ResultsPage<Clue> listClues(Integer pageSize, Integer pageNo, String filter, String order);
 }

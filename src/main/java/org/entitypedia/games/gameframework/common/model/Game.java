@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 
 /**
- * Game information.
+ * A game instance.
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
@@ -20,18 +20,39 @@ public class Game implements Serializable {
     @JsonIgnore
     private Developer developer;
 
+    /**
+     * Game title. For example, "Entitypedia Crosswords".
+     */
     private String title;
 
+    /**
+     * Game description. A couple of sentences, up to a paragraph, plain text description of the game.
+     */
     private String description;
 
+    /**
+     * The URL where the game can be played
+     */
     private String url;
 
+    /**
+     * The URL of the logo of the game to use in Games Framework
+     */
     private String logoURL;
 
+    /**
+     * The URL of the slider image of the game to use on the home page of Games Framework
+     */
     private String sliderURL;
 
+    /**
+     * The URL of the OAuth callback
+     */
     private String OAuthCallbackURL;
 
+    /**
+     * The OAuth secret
+     */
     private String OAuthSecret;
 
     public Long getId() {

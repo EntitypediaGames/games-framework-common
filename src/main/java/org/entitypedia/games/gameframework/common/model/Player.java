@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Player information.
+ * Player.
  *
  * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
@@ -18,34 +18,61 @@ public class Player implements Serializable {
 
     private Date creationTime;
 
+    /**
+     * Unique identifier. Random generated sequence of letters and numbers, starts with "p".
+     */
     private String uid;
 
     private String password;
 
     private String email;
 
+    /**
+     * True if the email was verified
+     */
     private Boolean emailActive;
 
     private String firstName;
 
     private String lastName;
 
+    /**
+     * ID of the Facebook account of this player
+     */
     private String facebookId;
 
+    /**
+     * Facebook long-term security token to authenticate on behalf of the player
+     */
     @JsonIgnore
     private String facebookToken;
 
+    /**
+     * Facebook token expiration date
+     */
     @JsonIgnore
     private Date facebookTokenExpiry;
 
+    /**
+     * ID of the Google+ account of this player
+     */
     private String gplusId;
 
+    /**
+     * Google+ security access token to authenticate on behalf of the player
+     */
     @JsonIgnore
     private String gplusAToken;
 
+    /**
+     * Google+ security access token expiration date
+     */
     @JsonIgnore
     private Date gplusATokenExpiry;
 
+    /**
+     * Google+ security access refresh token to obtain new access tokens
+     */
     @JsonIgnore
     private String gplusRToken;
 
