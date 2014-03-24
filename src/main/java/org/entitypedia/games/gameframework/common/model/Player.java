@@ -49,9 +49,6 @@ public class Player implements Serializable {
     @JsonIgnore
     private String gplusRToken;
 
-    @JsonIgnore
-    private String openId;
-
     public Long getId() {
         return id;
     }
@@ -138,14 +135,6 @@ public class Player implements Serializable {
 
     public void setFacebookTokenExpiry(Date facebookTokenExpiry) {
         this.facebookTokenExpiry = facebookTokenExpiry;
-    }
-
-    public String getOpenId() {
-        return openId;
-    }
-
-    public void setOpenId(String openId) {
-        this.openId = openId;
     }
 
     public String getGplusId() {

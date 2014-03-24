@@ -22,8 +22,7 @@ public interface IWordAPI {
     Word readWord(long wordID);
 
     /**
-     * Lists words. See {@link org.entitypedia.games.common.repository.hibernateimpl.filter.FilterCriteriaParser.parse}
-     * for details on filter expression syntax.
+     * Lists words.
      *
      * @param pageSize pageSize
      * @param pageNo   0-based page number

@@ -22,8 +22,7 @@ public interface IClueAPI {
     Clue readClue(long clueID);
 
     /**
-     * Lists clues. See {@link org.entitypedia.games.common.repository.hibernateimpl.filter.FilterCriteriaParser.parse}
-     * for details on filter expression syntax.
+     * Lists clues.
      *
      * @param pageSize pageSize
      * @param pageNo   0-based page number
