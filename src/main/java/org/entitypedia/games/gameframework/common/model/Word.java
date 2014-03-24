@@ -1,5 +1,7 @@
 package org.entitypedia.games.gameframework.common.model;
 
+import org.entitypedia.games.gameframework.common.exceptions.IllegalWordDifficultyValueException;
+
 import java.io.Serializable;
 
 /**
@@ -27,6 +29,11 @@ public class Word implements Serializable {
      * Word frequency in some text collection, now sourced from Google NGram
      */
     private Long frequency;
+
+    /**
+     * Word difficulty level: from 1 = very easy to 5 = very hard
+     */
+    private Integer difficulty;
 
     public Long getId() {
         return id;
@@ -58,5 +65,17 @@ public class Word implements Serializable {
 
     public void setFrequency(Long frequency) {
         this.frequency = frequency;
+    }
+
+    public Integer getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Integer difficulty) {
+        if (null != difficulty && 0 < difficulty && difficulty <= 5) {
+            this.difficulty = difficulty;
+        } else {
+            throw new IllegalWordDifficultyValueException(difficulty);
+        }
     }
 }
