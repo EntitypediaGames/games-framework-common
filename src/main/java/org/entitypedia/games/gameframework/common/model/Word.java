@@ -75,7 +75,11 @@ public class Word implements Serializable {
         if (null != difficulty && 0 < difficulty && difficulty <= 5) {
             this.difficulty = difficulty;
         } else {
-            throw new IllegalWordDifficultyValueException(difficulty);
+            if (null != difficulty) {
+                throw new IllegalWordDifficultyValueException(difficulty);
+            } else {
+                this.difficulty = null;
+            }
         }
     }
 }

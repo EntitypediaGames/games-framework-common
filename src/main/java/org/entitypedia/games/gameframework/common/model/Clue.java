@@ -1,6 +1,6 @@
 package org.entitypedia.games.gameframework.common.model;
 
-import org.entitypedia.games.gameframework.common.exceptions.IllegalWordDifficultyValueException;
+import org.entitypedia.games.gameframework.common.exceptions.IllegalClueDifficultyValueException;
 
 import java.io.Serializable;
 
@@ -91,7 +91,11 @@ public class Clue implements Serializable {
         if (null != difficulty && 0 < difficulty && difficulty <= 5) {
             this.difficulty = difficulty;
         } else {
-            throw new IllegalWordDifficultyValueException(difficulty);
+            if (null != difficulty) {
+                throw new IllegalClueDifficultyValueException(difficulty);
+            } else {
+                this.difficulty = null;
+            }
         }
     }
 }
