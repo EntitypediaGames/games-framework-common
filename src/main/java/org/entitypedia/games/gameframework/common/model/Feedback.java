@@ -1,5 +1,7 @@
 package org.entitypedia.games.gameframework.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,16 +14,21 @@ public class Feedback implements Serializable {
 
     private Long id;
 
+    @JsonIgnore
     private Player player;
 
+    @JsonIgnore
     private Game game;
 
     private Clue clue;
 
+    @JsonIgnore
     private Date creationTime;
 
+    @JsonIgnore
     private Date postTime;
 
+    @JsonIgnore
     private Date cancelTime;
 
     private Long entityId;
