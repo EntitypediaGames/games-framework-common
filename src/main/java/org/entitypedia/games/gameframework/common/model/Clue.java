@@ -1,8 +1,10 @@
 package org.entitypedia.games.gameframework.common.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.entitypedia.games.gameframework.common.exceptions.IllegalClueDifficultyValueException;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Clue as used in word games. For example, "an ... a day keeps the doctor away".
@@ -42,6 +44,11 @@ public class Clue implements Serializable {
      * Clue difficulty level: from 1 = very easy to 5 = very hard
      */
     private Integer difficulty;
+
+    private ClueTemplate clueTemplate;
+
+    @JsonManagedReference("clue-attribute")
+    private List<ClueEntityAttribute> clueEntityAttributes;
 
     public Long getId() {
         return id;
@@ -97,5 +104,21 @@ public class Clue implements Serializable {
                 this.difficulty = null;
             }
         }
+    }
+
+    public ClueTemplate getClueTemplate() {
+        return clueTemplate;
+    }
+
+    public void setClueTemplate(ClueTemplate clueTemplate) {
+        this.clueTemplate = clueTemplate;
+    }
+
+    public List<ClueEntityAttribute> getClueEntityAttributes() {
+        return clueEntityAttributes;
+    }
+
+    public void setClueEntityAttributes(List<ClueEntityAttribute> clueEntityAttributes) {
+        this.clueEntityAttributes = clueEntityAttributes;
     }
 }
