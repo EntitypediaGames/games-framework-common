@@ -1,6 +1,7 @@
 package org.entitypedia.games.gameframework.common.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
 
@@ -25,6 +26,9 @@ public class ClueEntityAttribute implements Serializable {
     private String attributeValue;
 
     private String originalValue;
+
+    @JsonIgnore
+    private Boolean groundTruth;
 
     public Long getId() {
         return id;
@@ -80,5 +84,13 @@ public class ClueEntityAttribute implements Serializable {
 
     public void setOriginalValue(String originalValue) {
         this.originalValue = originalValue;
+    }
+
+    public Boolean getGroundTruth() {
+        return groundTruth;
+    }
+
+    public void setGroundTruth(Boolean groundTruth) {
+        this.groundTruth = groundTruth;
     }
 }
