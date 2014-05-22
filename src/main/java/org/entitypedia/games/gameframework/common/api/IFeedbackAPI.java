@@ -13,6 +13,7 @@ public interface IFeedbackAPI {
     final String CREATE_FEEDBACK = "feedback/create";
     final String POST_FEEDBACK = "feedback/post";
     final String CANCEL_FEEDBACK = "feedback/cancel";
+    final String CONFIRM_CLUE = "feedback/confirmClue";
 
     /**
      * Creates a feedback item.
@@ -38,4 +39,12 @@ public interface IFeedbackAPI {
      * @param feedbackID feedback item to cancel
      */
     void cancelFeedback(long feedbackID);
+
+    /**
+     * Confirms clue correctness by interpreting players' input as confidence measure.
+     *
+     * @param clueID clue to confirm
+     * @param confidence confidence of player's knowledge, 0 to 1
+     */
+    void confirmClue(long clueID, double confidence);
 }
