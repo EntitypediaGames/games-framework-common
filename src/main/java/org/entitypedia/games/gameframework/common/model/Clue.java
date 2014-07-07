@@ -50,6 +50,18 @@ public class Clue implements Serializable {
     @JsonManagedReference("clue-attribute")
     private List<ClueEntityAttribute> clueEntityAttributes;
 
+    /**
+     * True if the answer is a concatenation of multi word value.
+     * This flag is part of the clue rather than word because
+     * some multiwords might be words and only "user" (e.g. clue) knows what it is.
+     */
+    private Boolean multiword;
+
+    /**
+     * The url of the image for media clues
+     */
+    private String imgUrl;
+
     public Long getId() {
         return id;
     }
@@ -120,5 +132,21 @@ public class Clue implements Serializable {
 
     public void setClueEntityAttributes(List<ClueEntityAttribute> clueEntityAttributes) {
         this.clueEntityAttributes = clueEntityAttributes;
+    }
+
+    public Boolean getMultiword() {
+        return multiword;
+    }
+
+    public void setMultiword(Boolean multiword) {
+        this.multiword = multiword;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }
