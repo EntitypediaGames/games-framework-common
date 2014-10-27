@@ -35,6 +35,8 @@ public class Word implements Serializable {
      */
     private Integer difficulty;
 
+    private Boolean hasMediaClues;
+
     public Long getId() {
         return id;
     }
@@ -81,5 +83,13 @@ public class Word implements Serializable {
                 this.difficulty = null;
             }
         }
+    }
+
+    public Boolean getHasMediaClues() {
+        return hasMediaClues;
+    }
+
+    public void setHasMediaClues(Boolean hasMediaClues) {
+        this.hasMediaClues = hasMediaClues;
     }
 }
