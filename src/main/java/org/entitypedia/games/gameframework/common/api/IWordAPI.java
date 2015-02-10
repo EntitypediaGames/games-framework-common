@@ -1,6 +1,9 @@
 package org.entitypedia.games.gameframework.common.api;
 
+import org.entitypedia.games.common.exceptions.FilterParsingException;
+import org.entitypedia.games.common.exceptions.OrderParsingException;
 import org.entitypedia.games.common.model.ResultsPage;
+import org.entitypedia.games.gameframework.common.exceptions.WordNotFoundException;
 import org.entitypedia.games.gameframework.common.model.Word;
 
 /**
@@ -16,6 +19,8 @@ public interface IWordAPI {
 
     /**
      * Retrieves a particular word by id.
+     * <p>
+     * Throws {@link WordNotFoundException} if {@code wordID} is not found.
      *
      * @param wordID id of the word to retrieve
      * @return word structure
@@ -26,6 +31,10 @@ public interface IWordAPI {
      * Lists words. In the resulting page overallCount might equal -1, which means
      * that total amount of items being returned is unknown. In this case pagesCount will equal -1 too.
      * The client in this case should keep reading the pages till the page returned is not empty.
+     * <p>
+     * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br/>
+     * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br/>
+     * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br/>
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number

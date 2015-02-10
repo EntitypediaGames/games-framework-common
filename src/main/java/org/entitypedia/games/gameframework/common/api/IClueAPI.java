@@ -1,6 +1,9 @@
 package org.entitypedia.games.gameframework.common.api;
 
+import org.entitypedia.games.common.exceptions.FilterParsingException;
+import org.entitypedia.games.common.exceptions.OrderParsingException;
 import org.entitypedia.games.common.model.ResultsPage;
+import org.entitypedia.games.gameframework.common.exceptions.ClueNotFoundException;
 import org.entitypedia.games.gameframework.common.model.Clue;
 
 /**
@@ -16,6 +19,8 @@ public interface IClueAPI {
 
     /**
      * Retrieves a particular clue by id.
+     * <p>
+     * Throws {@link ClueNotFoundException} if {@code clueID} is not found.
      *
      * @param clueID id of the clue to retrieve
      * @return clue structure
@@ -24,6 +29,10 @@ public interface IClueAPI {
 
     /**
      * Lists clues.
+     * <p>
+     * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br/>
+     * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br/>
+     * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br/>
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number
