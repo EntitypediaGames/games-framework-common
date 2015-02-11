@@ -9,8 +9,8 @@ import org.entitypedia.games.gameframework.common.model.Clue;
 /**
  * API for working with clues.
  *
- * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
- * @spring-mvc-doclet.path clues
+ * @author <a href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @spring.mvc.doclet.path clues
  */
 public interface IClueAPI {
 
@@ -30,14 +30,15 @@ public interface IClueAPI {
     /**
      * Lists clues.
      * <p>
-     * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br/>
-     * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br/>
-     * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br/>
+     * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
+     * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br>
+     * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br>
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number
      * @param filter   filter expression. example: creator.id eq 1 or published eq true or creationTime ge '20130101'
      * @param order    order expression. example: Alayout.rowCount-Dlayout.columnCount
+     * @return a page of clues
      */
     ResultsPage<Clue> listClues(Integer pageSize, Integer pageNo, String filter, String order);
 }

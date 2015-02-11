@@ -1,6 +1,6 @@
 package org.entitypedia.games.gameframework.common.exceptions;
 
-import org.entitypedia.games.common.exceptions.WordGameException;
+import org.entitypedia.games.common.exceptions.GameException;
 
 import java.text.MessageFormat;
 import java.util.Locale;
@@ -9,11 +9,11 @@ import java.util.ResourceBundle;
 /**
  * Game Framework root exception.
  *
- * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @author <a href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
-public class GameFrameworkException extends WordGameException {
+public class GamesFrameworkException extends GameException {
 
-    private static final ResourceBundle messages = ResourceBundle.getBundle("gameframework-exceptions", Locale.getDefault());
+    private static final ResourceBundle messages = ResourceBundle.getBundle("games-framework-exceptions", Locale.getDefault());
 
     /**
      * Constructor.
@@ -21,7 +21,7 @@ public class GameFrameworkException extends WordGameException {
      *
      * @param errorDescription the description of the error
      */
-    public GameFrameworkException(String errorDescription) {
+    public GamesFrameworkException(String errorDescription) {
         super(errorDescription);
     }
 
@@ -32,7 +32,7 @@ public class GameFrameworkException extends WordGameException {
      * @param errorDescription the description of the error
      * @param cause            the cause
      */
-    public GameFrameworkException(String errorDescription, Throwable cause) {
+    public GamesFrameworkException(String errorDescription, Throwable cause) {
         super(errorDescription, cause);
     }
 

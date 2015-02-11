@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Clue as used in word games. For example, "an ... a day keeps the doctor away".
  *
- * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @author <a href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
 public class Clue implements Serializable {
 

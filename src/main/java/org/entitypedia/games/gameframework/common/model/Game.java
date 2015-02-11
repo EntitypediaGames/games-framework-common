@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * A game instance.
  *
- * @author <a rel="author" href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @author <a href="http://autayeu.com/">Aliaksandr Autayeu</a>
  */
 public class Game implements Serializable {
 
