@@ -55,6 +55,11 @@ public class Game implements Serializable {
      */
     private String OAuthSecret;
 
+    /**
+     * Production game flag.
+     */
+    private Boolean production;
+
     public Long getId() {
         return id;
     }
@@ -125,6 +130,14 @@ public class Game implements Serializable {
 
     public void setOAuthSecret(String OAuthSecret) {
         this.OAuthSecret = OAuthSecret;
+    }
+
+    public Boolean isProduction() {
+        return production;
+    }
+
+    public void setProduction(Boolean production) {
+        this.production = production;
     }
 
     @Override
