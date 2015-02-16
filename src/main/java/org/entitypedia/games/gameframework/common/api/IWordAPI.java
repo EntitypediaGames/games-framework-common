@@ -14,8 +14,8 @@ import org.entitypedia.games.gameframework.common.model.Word;
  */
 public interface IWordAPI {
 
-    final String READ_WORD = "word/{wordID}";
-    final String LIST_WORDS = "words";
+    String READ_WORD = "word/{wordID}";
+    String LIST_WORDS = "words";
 
     /**
      * Retrieves a particular word by id.

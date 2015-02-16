@@ -13,24 +13,24 @@ import org.entitypedia.games.gameframework.common.model.Player;
  */
 public interface IPlayerAPI {
 
-    final String LOGIN_PLAYER = "players/login";
-    final String ACTIVATE_PLAYER_EMAIL = "players/activateEmail";
-    final String REQUEST_PLAYER_EMAIL_ACTIVATION = "players/requestEmailActivation";
-    final String RESET_PLAYER_PASSWORD = "players/resetPassword";
-    final String REQUEST_PLAYER_PASSWORD_RESET = "players/requestPasswordReset";
-    final String LOGIN_FACEBOOK_PLAYER = "players/loginFacebook";
-    final String LOGIN_GPLUS_PLAYER = "players/loginGPlus";
-    final String CREATE_PLAYER = "players/create";
-    final String READ_PLAYER = "player/{playerID}";
-    final String DELETE_PLAYER = "players/delete";
-    final String UPDATE_PLAYER = "players/update";
-    final String UPDATE_PLAYER_PASSWORD = "players/updatePassword";
-    final String UPDATE_PLAYER_EMAIL = "players/updateEmail";
-    final String UPDATE_PLAYER_FIRST_NAME = "players/updateFirstName";
-    final String UPDATE_PLAYER_LAST_NAME = "players/updateLastName";
-    final String UPDATE_PLAYER_FACEBOOK = "players/updateFacebook";
-    final String UPDATE_PLAYER_GPLUS = "players/updateGPlus";
-    final String LIST_PLAYERS = "players";
+    String LOGIN_PLAYER = "players/login";
+    String ACTIVATE_PLAYER_EMAIL = "players/activateEmail";
+    String REQUEST_PLAYER_EMAIL_ACTIVATION = "players/requestEmailActivation";
+    String RESET_PLAYER_PASSWORD = "players/resetPassword";
+    String REQUEST_PLAYER_PASSWORD_RESET = "players/requestPasswordReset";
+    String LOGIN_FACEBOOK_PLAYER = "players/loginFacebook";
+    String LOGIN_GPLUS_PLAYER = "players/loginGPlus";
+    String CREATE_PLAYER = "players/create";
+    String READ_PLAYER = "player/{playerID}";
+    String DELETE_PLAYER = "players/delete";
+    String UPDATE_PLAYER = "players/update";
+    String UPDATE_PLAYER_PASSWORD = "players/updatePassword";
+    String UPDATE_PLAYER_EMAIL = "players/updateEmail";
+    String UPDATE_PLAYER_FIRST_NAME = "players/updateFirstName";
+    String UPDATE_PLAYER_LAST_NAME = "players/updateLastName";
+    String UPDATE_PLAYER_FACEBOOK = "players/updateFacebook";
+    String UPDATE_PLAYER_GPLUS = "players/updateGPlus";
+    String LIST_PLAYERS = "players";
 
     /**
      * Login (just checks credentials).

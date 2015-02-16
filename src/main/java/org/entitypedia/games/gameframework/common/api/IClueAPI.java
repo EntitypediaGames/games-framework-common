@@ -14,8 +14,8 @@ import org.entitypedia.games.gameframework.common.model.Clue;
  */
 public interface IClueAPI {
 
-    final String READ_CLUE = "clue/{clueID}";
-    final String LIST_CLUES = "clues";
+    String READ_CLUE = "clue/{clueID}";
+    String LIST_CLUES = "clues";
 
     /**
      * Retrieves a particular clue by id.

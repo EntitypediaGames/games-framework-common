@@ -15,8 +15,8 @@ import org.entitypedia.games.gameframework.common.model.ClueTemplate;
  */
 public interface IClueTemplateAPI {
 
-    final String READ_CLUE_TEMPLATE = "clueTemplate/{clueTemplateID}";
-    final String LIST_CLUE_TEMPLATES = "clueTemplates";
+    String READ_CLUE_TEMPLATE = "clueTemplate/{clueTemplateID}";
+    String LIST_CLUE_TEMPLATES = "clueTemplates";
 
     /**
      * Retrieves a particular clue template by id.

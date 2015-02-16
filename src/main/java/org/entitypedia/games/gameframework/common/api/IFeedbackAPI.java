@@ -14,10 +14,10 @@ import org.entitypedia.games.gameframework.common.model.Feedback;
  */
 public interface IFeedbackAPI {
 
-    final String CREATE_FEEDBACK = "feedback/create";
-    final String POST_FEEDBACK = "feedback/post";
-    final String CANCEL_FEEDBACK = "feedback/cancel";
-    final String CONFIRM_CLUE = "feedback/confirmClue";
+    String CREATE_FEEDBACK = "feedback/create";
+    String POST_FEEDBACK = "feedback/post";
+    String CANCEL_FEEDBACK = "feedback/cancel";
+    String CONFIRM_CLUE = "feedback/confirmClue";
 
     /**
      * Creates a feedback item.
