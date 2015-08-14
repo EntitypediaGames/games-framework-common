@@ -31,6 +31,8 @@ public interface IDeveloperAPI {
      * Login (just checks credentials).
      * <p>
      * Throws {@link AccessDeniedException} if authentication fails.
+     * <p>
+     * Available for developers.
      */
     void loginDeveloper();
 
@@ -38,6 +40,8 @@ public interface IDeveloperAPI {
      * Reads particular developer by id or uid. IDs are numerical.
      * <p>
      * Throws {@link DeveloperNotFoundException} is developer is not found.<br>
+     * <p>
+     * Available for developers and players.
      *
      * @param developerID id of the developer to read.
      * @return developer structure
@@ -49,6 +53,8 @@ public interface IDeveloperAPI {
      * <p>
      * Throws {@link PasswordResetCodeNotFoundException} if password reset code is not found.<br>
      * Throws {@link InvalidPasswordResetCodeException} if password reset is already completed.<br>
+     * <p>
+     * Available without authentication.
      *
      * @param code     password reset authorization code
      * @param password new password
@@ -59,6 +65,8 @@ public interface IDeveloperAPI {
      * Sends password reset code to the developer's email.
      * <p>
      * Throws {@link TooManyRecentPendingPasswordResetsException} if password reset count if over quota.
+     * <p>
+     * Available without authentication.
      *
      * @param email developer's email
      */
@@ -68,6 +76,8 @@ public interface IDeveloperAPI {
      * Updates developer password.
      * <p>
      * Throws {@link DeveloperNotFoundException} is developer is not found.<br>
+     * <p>
+     * Available for the developer in question.
      *
      * @param developerID id of the developer
      * @param password    new password
@@ -79,6 +89,8 @@ public interface IDeveloperAPI {
      * <p>
      * Throws {@link DeveloperNotFoundException} is developer is not found.<br>
      * Throws {@link DuplicateEmailException} if there is already a registered developer with the same email.<br>
+     * <p>
+     * Available for the developer in question.
      *
      * @param developerID id of the developer
      * @param email       new email
@@ -89,6 +101,8 @@ public interface IDeveloperAPI {
      * Updates developer first name.
      * <p>
      * Throws {@link DeveloperNotFoundException} is developer is not found.<br>
+     * <p>
+     * Available for the developer in question.
      *
      * @param developerID id of the developer
      * @param firstName   new first name
@@ -99,6 +113,8 @@ public interface IDeveloperAPI {
      * Updates developer last name.
      * <p>
      * Throws {@link DeveloperNotFoundException} is developer is not found.<br>
+     * <p>
+     * Available for the developer in question.
      *
      * @param developerID id of the developer
      * @param lastName    new last name
@@ -109,6 +125,8 @@ public interface IDeveloperAPI {
      * Lists developers.
      * <p>
      * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
+     * <p>
+     * Available for developers and players.
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number

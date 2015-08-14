@@ -21,6 +21,8 @@ public interface IWordAPI {
      * Retrieves a particular word by id.
      * <p>
      * Throws {@link WordNotFoundException} if {@code wordID} is not found.
+     * <p>
+     * Available for players.
      *
      * @param wordID id of the word to retrieve
      * @return word structure
@@ -35,6 +37,8 @@ public interface IWordAPI {
      * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
      * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br>
      * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br>
+     * <p>
+     * Available for players.
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number

@@ -22,6 +22,8 @@ public interface IClueTemplateAPI {
      * Retrieves a particular clue template by id.
      * <p>
      * Throws {@link ClueTemplateNotFoundException} if {@code clueTemplateID} is not found.
+     * <p>
+     * Available for developers or games.
      *
      * @param clueTemplateID id of the clue template to read
      * @return clue template structure
@@ -34,6 +36,8 @@ public interface IClueTemplateAPI {
      * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
      * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br>
      * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br>
+     * <p>
+     * Available for developers or games.
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number

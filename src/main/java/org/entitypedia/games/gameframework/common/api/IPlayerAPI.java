@@ -36,11 +36,15 @@ public interface IPlayerAPI {
      * Login (just checks credentials).
      * <p>
      * Throws {@link AccessDeniedException} if authentication fails.
+     * <p>
+     * Available for players.
      */
     void login();
 
     /**
      * Logs in Facebook account.
+     * <p>
+     * Available for unauthenticated.
      *
      * @param token Facebook authorization token
      * @return player instance
@@ -49,6 +53,8 @@ public interface IPlayerAPI {
 
     /**
      * Logs in GPlus account.
+     * <p>
+     * Available for unauthenticated.
      *
      * @param code GPlus authorization code
      * @return player instance
@@ -59,6 +65,8 @@ public interface IPlayerAPI {
      * Marks player email as really owned by the player.
      * <p>
      * Throws {@link ActivationCodeNotFoundException} if activation code is not recognized.
+     * <p>
+     * Available for unauthenticated.
      *
      * @param code activation code from the activation message
      */
@@ -69,6 +77,8 @@ public interface IPlayerAPI {
      * <p>
      * Throws {@link TooManyPendingActivationAttemptsException} if there are too many pending activation requests.<br>
      * Throws {@link TooManyRecentPendingActivationAttemptsException} if there are too many activation attempts.<br>
+     * <p>
+     * Available for players.
      */
     void requestEmailActivation();
 
@@ -77,6 +87,8 @@ public interface IPlayerAPI {
      * <p>
      * Throws {@link PasswordResetCodeNotFoundException} if password reset code is not found.<br>
      * Throws {@link InvalidPasswordResetCodeException} if password reset is already completed.<br>
+     * <p>
+     * Available for unauthenticated.
      *
      * @param code     password reset authorization code
      * @param password new password
@@ -87,6 +99,8 @@ public interface IPlayerAPI {
      * Sends password reset code to the player's email.
      * <p>
      * Throws {@link TooManyRecentPendingPasswordResetsException} if password reset count if over quota.
+     * <p>
+     * Available for unauthenticated.
      *
      * @param email player's email
      */
@@ -96,6 +110,8 @@ public interface IPlayerAPI {
      * Creates a player.
      * <p>
      * Throws {@link DuplicateEmailException} if there is already a registered player with the same email.<br>
+     * <p>
+     * Available for unauthenticated.
      *
      * @param player player structure
      * @return player structure
@@ -108,6 +124,8 @@ public interface IPlayerAPI {
      * (useful for games which might need to retrieve game framework account id).
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
+     * <p>
+     * Available for players.
      *
      * @param playerID id of the player to retrieve.
      * @return player structure
@@ -118,16 +136,20 @@ public interface IPlayerAPI {
      * Retrieves a particular player by id.
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
+     * <p>
+     * Available for players.
      *
      * @param playerID player id
      * @return player structure
      */
-    public Player readPlayer(long playerID);
+    Player readPlayer(long playerID);
 
     /**
      * Deletes a player.
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID id of a player to delete
      */
@@ -138,6 +160,8 @@ public interface IPlayerAPI {
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
      * Throws {@link DuplicateEmailException} if there is already a registered player with the same email.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param player player to update
      */
@@ -147,6 +171,8 @@ public interface IPlayerAPI {
      * Updates player password.
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID id of the player
      * @param password new password
@@ -158,6 +184,8 @@ public interface IPlayerAPI {
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
      * Throws {@link DuplicateEmailException} if there is already a registered player with the same email.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID id of the player
      * @param email    new email
@@ -168,6 +196,8 @@ public interface IPlayerAPI {
      * Updates player first name.
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID  id of the player
      * @param firstName new first name
@@ -178,6 +208,8 @@ public interface IPlayerAPI {
      * Updates player last name.
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID id of the player
      * @param lastName new last name
@@ -189,6 +221,8 @@ public interface IPlayerAPI {
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
      * Throws {@link FacebookAccountAlreadyConnectedException} is player already has connected Facebook account.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID id of the player
      * @param token    Facebook access token. Empty string removes the connection with Facebook.
@@ -200,6 +234,8 @@ public interface IPlayerAPI {
      * <p>
      * Throws {@link PlayerNotFoundException} is player is not found.<br>
      * Throws {@link GPlusAccountAlreadyConnectedException} is player already has connected GPlus account.<br>
+     * <p>
+     * Available for the player in question.
      *
      * @param playerID id of the player
      * @param code     GPlus access code. Empty string removes the connection with GPlus.
@@ -210,6 +246,8 @@ public interface IPlayerAPI {
      * Lists players.
      * <p>
      * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
+     * <p>
+     * Available for players.
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number

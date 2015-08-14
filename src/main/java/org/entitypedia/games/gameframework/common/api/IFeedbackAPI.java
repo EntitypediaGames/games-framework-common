@@ -23,6 +23,8 @@ public interface IFeedbackAPI {
      * Creates a feedback item.
      * <p>
      * Throws {@link ClueNotFoundException} if clue referred by {@code clueID} is not found.<br>
+     * <p>
+     * Available for players.
      *
      * @param clueID clue to create feedback for
      * @return feedback item
@@ -36,6 +38,8 @@ public interface IFeedbackAPI {
      * Throws {@link FeedbackAlreadyPostedException} if feedback item is already posted.<br>
      * Throws {@link FeedbackAlreadyCancelledException} if feedback item is already canceled.<br>
      * Throws {@link ArrayIndexOutOfBoundsException} if {@code attributePosition} is out of bounds.<br>
+     * <p>
+     * Available for players.
      *
      * @param feedbackID        feedback item
      * @param attributePosition position of the attribute to correct
@@ -50,6 +54,8 @@ public interface IFeedbackAPI {
      * Throws {@link FeedbackNotFoundException} if feedback item referred by {@code feedbackID} is not found.<br>
      * Throws {@link FeedbackAlreadyPostedException} if feedback item is already posted.<br>
      * Throws {@link FeedbackAlreadyCancelledException} if feedback item is already canceled.<br>
+     * <p>
+     * Available for players.
      *
      * @param feedbackID feedback item to cancel
      */
@@ -60,6 +66,8 @@ public interface IFeedbackAPI {
      * <p>
      * Throws {@link ClueNotFoundException} if clue referred by {@code clueID} is not found.<br>
      * Throws {@link IllegalArgumentException} if confidence is out of [0, 1] interval.<br>
+     * <p>
+     * Available for games on behalf of players.
      *
      * @param clueID clue to confirm
      * @param confidence confidence of player's knowledge, 0 to 1

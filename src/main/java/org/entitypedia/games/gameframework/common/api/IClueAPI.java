@@ -21,6 +21,8 @@ public interface IClueAPI {
      * Retrieves a particular clue by id.
      * <p>
      * Throws {@link ClueNotFoundException} if {@code clueID} is not found.
+     * <p>
+     * Available for players.
      *
      * @param clueID id of the clue to retrieve
      * @return clue structure
@@ -33,6 +35,8 @@ public interface IClueAPI {
      * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
      * Throws {@link OrderParsingException} if {@code order} syntax is wrong.<br>
      * Throws {@link FilterParsingException} if {@code filter} syntax is wrong.<br>
+     * <p>
+     * Available for players.
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number
