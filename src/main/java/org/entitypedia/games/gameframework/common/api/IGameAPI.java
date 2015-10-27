@@ -26,8 +26,8 @@ public interface IGameAPI {
 
     /**
      * Creates a game instance.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @return game instance
      */
@@ -35,17 +35,18 @@ public interface IGameAPI {
 
     /**
      * Reads a particular game instance by id.
-     * <p/>
-     * Available for unauthenticated.
+     * <p>
+     * Available for unauthenticated.</p>
      *
+     * @param gameID id of the game
      * @return game instance
      */
     Game readGame(long gameID);
 
     /**
      * Updates game title.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      * @param title  new title, up to 255 chars
@@ -54,8 +55,8 @@ public interface IGameAPI {
 
     /**
      * Updates game description.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID      id of the game
      * @param description new description
@@ -64,8 +65,8 @@ public interface IGameAPI {
 
     /**
      * Updates game url.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      * @param url    new url, up to 255 chars
@@ -74,8 +75,8 @@ public interface IGameAPI {
 
     /**
      * Updates game logo url. Current design accommodates 160x160 logos.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      * @param url    new url, up to 255 chars
@@ -84,8 +85,8 @@ public interface IGameAPI {
 
     /**
      * Updates game slider url. Current design accommodates 1200x320 slider images.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      * @param url    new url, up to 255 chars
@@ -94,8 +95,8 @@ public interface IGameAPI {
 
     /**
      * Updates game OAuth callback url.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      * @param url    new url, up to 255 chars
@@ -104,8 +105,8 @@ public interface IGameAPI {
 
     /**
      * Updates game OAuth secret.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      * @param secret new secret, up to 255 chars
@@ -114,8 +115,8 @@ public interface IGameAPI {
 
     /**
      * Updates game production flag. Only production-ready games are shown in the API and on the site.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID     id of the game
      * @param production new production flag
@@ -124,8 +125,8 @@ public interface IGameAPI {
 
     /**
      * Deletes game instance.
-     * <p/>
-     * Available for developers.
+     * <p>
+     * Available for developers.</p>
      *
      * @param gameID id of the game
      */
@@ -133,10 +134,10 @@ public interface IGameAPI {
 
     /**
      * Lists games.
-     * <p/>
-     * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.<br>
-     * <p/>
-     * Available for unauthorized.
+     * <p>
+     * Throws {@link IllegalArgumentException} if {@code pageNo} or {@code pageSize} is out of bounds.</p>
+     * <p>
+     * Available for unauthorized.</p>
      *
      * @param pageSize pageSize, default 9, max 100
      * @param pageNo   0-based page number
